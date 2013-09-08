@@ -1,0 +1,18 @@
+{
+   "app": {
+      "launch": {
+         "local_path": "index.html"
+      }
+   },
+   "description": "Quickly Check Pokemon Weaknesses",
+   "icons": {
+      "128": "128.png",
+      "16": "16.png",
+      "24": "24.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD6Q5AMdh7VKsfzIvJC1C2cQkvKtQkeebgCNcXZo8koNBmIWW8G8GOj3JMbTk3Y6KBS4QMfVp4MjSBTOcwfHt0PNASCqcMJoqhdrKC5YoI3aBo3kz4DxwuMyC3MHUHe6TpKmLEIqURHd11ZJgoXYD+grZbfU4gEbV8ODY/CbQ6itQIDAQAB",
+   "name": "PokeTyper, actionless mode",
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "2.0.0",
+   "manifest_version": 2
+}
