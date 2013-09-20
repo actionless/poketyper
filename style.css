@@ -1,7 +1,10 @@
 body {
-	background-color: #201f1f;
+	/*background-color: #201f1f;*/
 	font-size: 16px;
+    font-family:'Kelly Slab',Sans;
 	/*text-align:center;*/
+    padding:0;
+    margin:0;
 }
 b {
 	color: #808080;
@@ -12,9 +15,16 @@ i {
 	font-size: 10px;
 	text-align: right;
 }
+button{
+        font-family:'Kelly Slab',Sans;
+}
 
 .fl{
     float: left;
+}
+
+#progname{
+    text-align:center;
 }
 
 .types button{
@@ -23,8 +33,16 @@ i {
     width: 70px;
     padding: 1px 0 1px 0;
     margin: 0;
-    color: white;
+    border-color: white;
+    color:white;
+    text-transform:uppercase;
     text-shadow: 1px 1px #201f1f;
+    font-weight: bold;
+    opacity:0.8;
+}
+
+.types button:hover{
+    opacity:1;
 }
 
 .types button.active1, .types button.active2{
@@ -32,22 +50,32 @@ i {
     color:black;
     text-shadow: none;
     font-weight: bold;
+    opacity:1;
 }
 
 .types{
     padding-top: 24px;
 }
 
-.container{
+.container2{
     padding: 3px;
-    width: 180px;
+    width: 190px;
 }
 
 #demo{
+    padding-left: 30px;
     padding-top: 5px;
-    line-height: 132%
+    line-height: 140%;
 }
 
+#demo span{
+    font-weight:bold;
+    font-size:20px;
+}
+
+.None{
+    background-color:#FFFFFF;
+}
 .Bug{
     background-color: #A9B724;
 }
@@ -114,4 +142,55 @@ i {
 
 .Water{
     background-color: #6D97E9;
+}
+
+.typename{
+    width:100px;
+    display:inline-block;
+}
+
+.x0{
+    color: #DB7373;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ff0000, 0 0 7px #00ff00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+}
+.x025{
+    color: #F0AC56;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ffff00, 0 0 7px #ffaa00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+}
+.x05{
+    color: #D5C764;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ffff00, 0 0 7px #00ff00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+}
+.x1{
+    color: #bbb;
+    text-shadow: 0px 1px 1px #4d4d4d;
+}
+.x2{
+    color: #4FC74F;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #00ff00, 0 0 7px #00ff00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+}
+.x4{
+    color: #A7BDE2;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #0000ff, 0 0 7px #00ff00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+}
+
+div.background{
+    opacity:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    z-index:100;
+    margin:0;
+}
+div.background.active1,div.background.active2{
+    opacity:0.2;
+}
+div.background.active1.active2{
+    opacity:0.4;
+}
+div.container{    
+    height:100%;
+    width:100%;
+    position:absolute;
+    z-index:200;
 }

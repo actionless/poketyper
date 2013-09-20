@@ -1,14 +1,15 @@
 var type1 = "None";
 var type2 = "None";
-var typeArray = new Array("Bug", "Dark", "Dragon", "Electric", "Fight", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water");
-var ResultArray = new Array();
-var RemixArray = new Array();
+var typeArray = ["Bug", "Dark", "Dragon", "Electric", "Fight", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"];
+var ResultArray = [];
+var RemixArray = [];
 var Output = "";
 
-function initialize(){
+function initialize() {
     // 1. Fill remix with 1's
+    "use strict";
     RemixArray.length = 17;
-    for ( var i=0, len=RemixArray.length; i<len; ++i ) {
+    for (var i=0, len=RemixArray.length; i<len; ++i ) {
         RemixArray[i] = 1;
     }
     // 2. Fill the Arrays
@@ -40,17 +41,17 @@ function addOne() {
     for (i=0;i<17;i++) {
 
         if(ResultArray[i]==0.5) {
-            Output = Output + "<font color = '#dcd38e'>" +typeArray[i] + " does x"  + ResultArray[i] + " Damage</font><br>";
+            Output = Output + "<span class='x05 typename'>" +typeArray[i] + " </span><span class='x05'>x"  + ResultArray[i] + "</span><br>";
         } else if(ResultArray[i]==0.25) {
-            Output = Output + "<font color = '#dc8e8e'>" +typeArray[i] + " does x"  + ResultArray[i] + " Damage</font><br>";
+            Output = Output + "<span class='x025 typename'>" +typeArray[i] + " </span><span class='x025'>x"  + ResultArray[i] + "</span><br>";
         } else if(ResultArray[i]==4.00) {
-            Output = Output + "<font color = '#00c8d4'>" +typeArray[i] + " does x"  + ResultArray[i] + " Damage</font><br>";
+            Output = Output + "<span class='x4 typename'>" +typeArray[i] + " </span><span class='x4'>x"  + ResultArray[i] + "</span><br>";
         } else if(ResultArray[i]==2.00) {
-            Output = Output + "<font color = '#00d402'>" +typeArray[i] + " does x"  + ResultArray[i] + " Damage</font><br>";
+            Output = Output + "<span class='x2 typename'>" +typeArray[i] + " </span><span class='x2'>x"  + ResultArray[i] + "</span><br>";
         } else if(ResultArray[i]==0) {
-            Output = Output + "<font color = '#c88edc'>" +typeArray[i] + " does x"  + ResultArray[i] + " Damage</font><br>";
+            Output = Output + "<span class='x0 typename'>" +typeArray[i] + " </span><span class='x0'>x"  + ResultArray[i] + "</span><br>";
         } else {
-            Output = Output + "<font color = '#4a3551'>" +typeArray[i] + " does x"  + ResultArray[i] + " Damage</font><br>";
+            Output = Output + "<span class='x1 typename'>" +typeArray[i] + " </span><span class='x1'>x"  + ResultArray[i] + "</span><br>";
         }
 
     }
@@ -71,15 +72,25 @@ function clearSelection(className){
 
 function addOneType1(){
     type1=this.className;
+    
     clearSelection("active1");
     this.className += " active1";
+    
+    var bg_div=document.querySelector(".background."+type1);
+    bg_div.className += " active1";
+    
     addOne();
 }
 
 function addOneType2(){
     type2=this.className;
+    
     clearSelection("active2");
     this.className += " active2";
+    
+    var bg_div=document.querySelector(".background."+type2);
+    bg_div.className += " active2";
+    
     addOne();
 }
 
