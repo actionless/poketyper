@@ -71,9 +71,8 @@ function clearSelection(className){
 }
 
 function addOneType1(){
-    type1=this.className;
-    
     clearSelection("active1");
+    type1=this.className;
     this.className += " active1";
     
     var bg_div=document.querySelector(".background."+type1);
@@ -83,9 +82,8 @@ function addOneType1(){
 }
 
 function addOneType2(){
-    type2=this.className;
-    
     clearSelection("active2");
+    type2=this.className;
     this.className += " active2";
     
     var bg_div=document.querySelector(".background."+type2);
