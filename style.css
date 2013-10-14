@@ -6,6 +6,7 @@
 }
 body {
 	background-color: #201f1f;
+	/*background-color: #ccc;*/
 	font-size: 16px;
     font-family:'Kelly Slab',Sans;
 	/*text-align:center;*/
@@ -13,11 +14,12 @@ body {
     margin:0;
 }
 b {
-	color: #bbb;
+	/*color: #222;*/
+	color: #cccccc;
 	font-size: 16pt;
 }
 i {
-	color: #808080;
+	color: #666;
 	font-size: 10px;
 	text-align: right;
 }
@@ -150,22 +152,26 @@ button{
     background-color: #6D97E9;
 }
 
+.Fairy{
+    background-color: #FFAEC9;
+}
+
 .typename{
     width:100px;
     display:inline-block;
 }
-
+/*
 .x0{
     color: #DB7373;
-    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ff0000, 0 0 7px #00ff00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ff0000, 0 0 7px #00ff00, 0 0 8px #ff00de;
 }
 .x025{
     color: #F0AC56;
-    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ffff00, 0 0 7px #ffaa00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ffff00, 0 0 7px #ffaa00, 0 0 8px #ff00de;
 }
 .x05{
     color: #D5C764;
-    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ffff00, 0 0 7px #00ff00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ffff00, 0 0 7px #00ff00, 0 0 8px #ff00de;
 }
 .x1{
     color: #808080;
@@ -173,11 +179,30 @@ button{
 }
 .x2{
     color: #4FC74F;
-    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #00ff00, 0 0 7px #00ff00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #00ff00, 0 0 7px #00ff00, 0 0 8px #ff00de;
 }
 .x4{
     color: #5A93AD;
-    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #0000ff, 0 0 7px #00ff00, 0 0 8px #ff00de/*, 0 0 10px #00ff00, 0 0 15px #00ff00*/;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #0000ff, 0 0 7px #00ff00, 0 0 8px #ff00de;
+}
+*/
+.x0{
+    color: #DB7373;
+}
+.x025{
+    color: #F0AC56;
+}
+.x05{
+    color: #D5C764;
+}
+.x1{
+    color: #808080;
+}
+.x2{
+    color: #4FC74F;
+}
+.x4{
+    color: #6ec6c2;
 }
 
 div.background{

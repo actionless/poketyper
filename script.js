@@ -1,6 +1,6 @@
 var type1 = "None";
 var type2 = "None";
-var typeArray = ["Bug", "Dark", "Dragon", "Electric", "Fight", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"];
+var typeArray = ["Bug", "Dark", "Dragon", "Electric", "Fight", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water", "Fairy"];
 var ResultArray = [];
 var RemixArray = [];
 var Output = "";
@@ -8,7 +8,7 @@ var Output = "";
 function initialize() {
     // 1. Fill remix with 1's
     "use strict";
-    RemixArray.length = 17;
+    RemixArray.length = typeArray.length;
     for (var i=0, len=RemixArray.length; i<len; ++i ) {
         RemixArray[i] = 1;
     }
@@ -38,7 +38,7 @@ function addOne() {
 
     var i=0;
 
-    for (i=0;i<17;i++) {
+    for (i=0;i<ResultArray.length;i++) {
 
         if(ResultArray[i]==0.5) {
             Output = Output + "<span class='x05 typename'>" +typeArray[i] + " </span><span class='x05'>x"  + ResultArray[i] + "</span><br>";
@@ -123,6 +123,7 @@ function findWeak(type) {
         ResultArray[4]*= 2.0;
         ResultArray[7]*= 0.5;
         ResultArray[13]*= 0.0;
+        ResultArray[17]*= 2.0;
     }
 
     if (type == 'Dragon') {
@@ -132,6 +133,7 @@ function findWeak(type) {
         ResultArray[8]*= 0.5;
         ResultArray[10]*= 2.0;
         ResultArray[16]*= 0.5;
+        ResultArray[17]*= 2.0;
     }
 
     if (type == 'Electric') {
@@ -146,6 +148,7 @@ function findWeak(type) {
         ResultArray[6]*= 2.0;
         ResultArray[13]*= 2.0;
         ResultArray[14]*= 0.5;
+        ResultArray[17]*= 2.0;
     }
 
     if (type == 'Fire') {
@@ -157,6 +160,7 @@ function findWeak(type) {
         ResultArray[14]*= 2.0;
         ResultArray[15]*= 0.5;
         ResultArray[16]*= 2.0;
+        ResultArray[17]*= 0.5;
     }
 
     if (type == 'Flying') {
@@ -220,6 +224,7 @@ function findWeak(type) {
         ResultArray[9]*= 2.0;
         ResultArray[12]*= 0.5;
         ResultArray[13]*= 2.0;
+        ResultArray[17]*= 0.5;
     }
 
     if (type == 'Psychic') {
@@ -244,12 +249,12 @@ function findWeak(type) {
 
     if (type == 'Steel') {
         ResultArray[0]*= 0.5;
-        ResultArray[1]*= 0.5;
+/*        ResultArray[1]*= 0.5;*/
         ResultArray[2]*= 0.5;
         ResultArray[4]*= 2.0;
         ResultArray[5]*= 2.0;
         ResultArray[6]*= 0.5;
-        ResultArray[7]*= 0.5;
+/*        ResultArray[7]*= 0.5;*/
         ResultArray[8]*= 0.5;
         ResultArray[9]*= 2.0;
         ResultArray[10]*= 0.5;
@@ -258,6 +263,7 @@ function findWeak(type) {
         ResultArray[13]*= 0.5;
         ResultArray[14]*= 0.5;
         ResultArray[15]*= 0.5;
+        ResultArray[17]*= 0.5;
     }
 
     if (type == 'Water') {
@@ -267,6 +273,15 @@ function findWeak(type) {
         ResultArray[10]*= 0.5;
         ResultArray[15]*= 0.5;
         ResultArray[16]*= 0.5;
+    }
+
+    if (type == 'Fairy') {
+        ResultArray[12]*= 2.0;
+        ResultArray[15]*= 2.0;
+        ResultArray[0]*= 0.5;
+        ResultArray[1]*= 0.5;
+        ResultArray[4]*= 0.5;
+        ResultArray[2]*= 0.0;
     }
 
 }
