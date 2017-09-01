@@ -1,6 +1,25 @@
 var type1 = "None";
 var type2 = "None";
-var typeArray = ["Bug", "Dark", "Dragon", "Electric", "Fight", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water", "Fairy"];
+var typeKeys = {
+  "Bug": 0,
+  "Dark": 1,
+  "Dragon": 2,
+  "Electric": 3,
+  "Fight": 4,
+  "Fire": 5,
+  "Flying": 6,
+  "Ghost": 7,
+  "Grass": 8,
+  "Ground": 9,
+  "Ice": 10,
+  "Normal": 11,
+  "Poison": 12,
+  "Psychic": 13,
+  "Rock": 14,
+  "Steel": 15,
+  "Water": 16,
+  "Fairy": 17,
+};
 var ResultArray = [];
 var RemixArray = [];
 var Output = "";
@@ -8,7 +27,7 @@ var Output = "";
 function initialize() {
     // 1. Fill remix with 1's
     "use strict";
-    RemixArray.length = typeArray.length;
+    RemixArray.length = Object.keys(typeKeys).length;
     for (var i=0, len=RemixArray.length; i<len; ++i ) {
         RemixArray[i] = 1;
     }
@@ -31,6 +50,7 @@ window.addEventListener("load", initialize);
 
 // 3. Reacts to Button Press
 function addOne() {
+    var typeArray = Object.keys(typeKeys);
 
     findWeak(type1);
 
@@ -105,183 +125,184 @@ function fillArrays() {
 
 //Modifies an Array according to the Rules of Weakness
 function findWeak(type) {
+    var t = typeKeys;
 
     if (type == 'Bug') {
 
-        ResultArray[4]*= 0.5;
-        ResultArray[5]*= 2.0;
-        ResultArray[6]*= 2.0;
-        ResultArray[8]*= 0.5;
-        ResultArray[9]*= 0.5;
-        ResultArray[14]*= 2.0;
+        ResultArray[t["Fight"]]*= 0.5;
+        ResultArray[t["Fire"]]*= 2.0;
+        ResultArray[t["Flying"]]*= 2.0;
+        ResultArray[t["Grass"]]*= 0.5;
+        ResultArray[t["Ground"]]*= 0.5;
+        ResultArray[t["Rock"]]*= 2.0;
 
     }
 
     if (type == 'Dark') {
-        ResultArray[0]*= 2.0;
-        ResultArray[1]*= 0.5;
-        ResultArray[4]*= 2.0;
-        ResultArray[7]*= 0.5;
-        ResultArray[13]*= 0.0;
-        ResultArray[17]*= 2.0;
+        ResultArray[t["Bug"]]*= 2.0;
+        ResultArray[t["Dark"]]*= 0.5;
+        ResultArray[t["Fight"]]*= 2.0;
+        ResultArray[t["Ghost"]]*= 0.5;
+        ResultArray[t["Psychic"]]*= 0.0;
+        ResultArray[t["Fairy"]]*= 2.0;
     }
 
     if (type == 'Dragon') {
-        ResultArray[2]*= 2.0;
-        ResultArray[3]*= 0.5;
-        ResultArray[5]*= 0.5;
-        ResultArray[8]*= 0.5;
-        ResultArray[10]*= 2.0;
-        ResultArray[16]*= 0.5;
-        ResultArray[17]*= 2.0;
+        ResultArray[t["Dragon"]]*= 2.0;
+        ResultArray[t["Electric"]]*= 0.5;
+        ResultArray[t["Fire"]]*= 0.5;
+        ResultArray[t["Grass"]]*= 0.5;
+        ResultArray[t["Ice"]]*= 2.0;
+        ResultArray[t["Water"]]*= 0.5;
+        ResultArray[t["Fairy"]]*= 2.0;
     }
 
     if (type == 'Electric') {
-        ResultArray[3]*= 0.5;
-        ResultArray[6]*= 0.5;
-        ResultArray[9]*= 2.0;
-        ResultArray[15]*= 0.5;
+        ResultArray[t["Electric"]]*= 0.5;
+        ResultArray[t["Flying"]]*= 0.5;
+        ResultArray[t["Ground"]]*= 2.0;
+        ResultArray[t["Steel"]]*= 0.5;
     }
     if (type == 'Fight') {
-        ResultArray[0]*= 0.5;
-        ResultArray[1]*= 0.5;
-        ResultArray[6]*= 2.0;
-        ResultArray[13]*= 2.0;
-        ResultArray[14]*= 0.5;
-        ResultArray[17]*= 2.0;
+        ResultArray[t["Bug"]]*= 0.5;
+        ResultArray[t["Dark"]]*= 0.5;
+        ResultArray[t["Flying"]]*= 2.0;
+        ResultArray[t["Psychic"]]*= 2.0;
+        ResultArray[t["Rock"]]*= 0.5;
+        ResultArray[t["Fairy"]]*= 2.0;
     }
 
     if (type == 'Fire') {
-        ResultArray[0]*= 0.5;
-        ResultArray[5]*= 0.5;
-        ResultArray[8]*= 0.5;
-        ResultArray[9]*= 2.0;
-        ResultArray[10]*= 0.5;
-        ResultArray[14]*= 2.0;
-        ResultArray[15]*= 0.5;
-        ResultArray[16]*= 2.0;
-        ResultArray[17]*= 0.5;
+        ResultArray[t["Bug"]]*= 0.5;
+        ResultArray[t["Fire"]]*= 0.5;
+        ResultArray[t["Grass"]]*= 0.5;
+        ResultArray[t["Ground"]]*= 2.0;
+        ResultArray[t["Ice"]]*= 0.5;
+        ResultArray[t["Rock"]]*= 2.0;
+        ResultArray[t["Steel"]]*= 0.5;
+        ResultArray[t["Water"]]*= 2.0;
+        ResultArray[t["Fairy"]]*= 0.5;
     }
 
     if (type == 'Flying') {
-        ResultArray[0]*= 0.5;
-        ResultArray[3]*=2.0;
-        ResultArray[4]*= 0.5;
-        ResultArray[8]*= 0.5;
-        ResultArray[9]*= 0.0;
-        ResultArray[10]*= 2.0;
-        ResultArray[14]*= 2.0;
+        ResultArray[t["Bug"]]*= 0.5;
+        ResultArray[t["Electric"]]*=2.0;
+        ResultArray[t["Fight"]]*= 0.5;
+        ResultArray[t["Grass"]]*= 0.5;
+        ResultArray[t["Ground"]]*= 0.0;
+        ResultArray[t["Ice"]]*= 2.0;
+        ResultArray[t["Rock"]]*= 2.0;
     }
 
     if (type == 'Ghost') {
-        ResultArray[0]*= 0.5;
-        ResultArray[1]*= 2.0;
-        ResultArray[4]*= 0.0;
-        ResultArray[7]*= 2.0;
-        ResultArray[11]*= 0.0;
-        ResultArray[12]*= 0.5;
+        ResultArray[t["Bug"]]*= 0.5;
+        ResultArray[t["Dark"]]*= 2.0;
+        ResultArray[t["Fight"]]*= 0.0;
+        ResultArray[t["Ghost"]]*= 2.0;
+        ResultArray[t["Normal"]]*= 0.0;
+        ResultArray[t["Poison"]]*= 0.5;
     }
 
     if (type == 'Grass') {
-        ResultArray[0]*= 2.0;
-        ResultArray[3]*= 0.5;
-        ResultArray[5]*= 2.0;
-        ResultArray[6]*= 2.0;
-        ResultArray[8]*= 0.5;
-        ResultArray[9]*= 0.5;
-        ResultArray[10]*= 2.0;
-        ResultArray[12]*= 2.0;
-        ResultArray[16]*= 0.5;
+        ResultArray[t["Bug"]]*= 2.0;
+        ResultArray[t["Electric"]]*= 0.5;
+        ResultArray[t["Fire"]]*= 2.0;
+        ResultArray[t["Flying"]]*= 2.0;
+        ResultArray[t["Grass"]]*= 0.5;
+        ResultArray[t["Ground"]]*= 0.5;
+        ResultArray[t["Ice"]]*= 2.0;
+        ResultArray[t["Poison"]]*= 2.0;
+        ResultArray[t["Water"]]*= 0.5;
     }
 
     if (type == 'Ground') {
-        ResultArray[3]*= 0.0;
-        ResultArray[8]*= 2.0;
-        ResultArray[10]*= 2.0;
-        ResultArray[12]*= 0.5;
-        ResultArray[14]*= 0.5;
-        ResultArray[16]*= 2.0;
+        ResultArray[t["Electric"]]*= 0.0;
+        ResultArray[t["Grass"]]*= 2.0;
+        ResultArray[t["Ice"]]*= 2.0;
+        ResultArray[t["Poison"]]*= 0.5;
+        ResultArray[t["Rock"]]*= 0.5;
+        ResultArray[t["Water"]]*= 2.0;
     }
 
     if (type == 'Ice') {
-        ResultArray[4]*= 2.0;
-        ResultArray[5]*= 2.0;
-        ResultArray[10]*= 0.5;
-        ResultArray[12]*= 0.5;
-        ResultArray[14]*= 2.0;
-        ResultArray[15]*= 2.0;
+        ResultArray[t["Fight"]]*= 2.0;
+        ResultArray[t["Fire"]]*= 2.0;
+        ResultArray[t["Ice"]]*= 0.5;
+        ResultArray[t["Poison"]]*= 0.5;
+        ResultArray[t["Rock"]]*= 2.0;
+        ResultArray[t["Steel"]]*= 2.0;
     }
 
     if (type == 'Normal') {
-        ResultArray[4]*= 2.0;
-        ResultArray[7]*= 0.0;
+        ResultArray[t["Fight"]]*= 2.0;
+        ResultArray[t["Ghost"]]*= 0.0;
     }
 
     if (type == 'Poison') {
-        ResultArray[0]*= 0.5;
-        ResultArray[4]*= 0.5;
-        ResultArray[8]*= 0.5;
-        ResultArray[9]*= 2.0;
-        ResultArray[12]*= 0.5;
-        ResultArray[13]*= 2.0;
-        ResultArray[17]*= 0.5;
+        ResultArray[t["Bug"]]*= 0.5;
+        ResultArray[t["Fight"]]*= 0.5;
+        ResultArray[t["Grass"]]*= 0.5;
+        ResultArray[t["Ground"]]*= 2.0;
+        ResultArray[t["Poison"]]*= 0.5;
+        ResultArray[t["Psychic"]]*= 2.0;
+        ResultArray[t["Fairy"]]*= 0.5;
     }
 
     if (type == 'Psychic') {
-        ResultArray[0]*= 2.0;
-        ResultArray[1]*= 2.0;
-        ResultArray[4]*= 0.5;
-        ResultArray[7]*= 2.0;
-        ResultArray[13]*= 0.5;
+        ResultArray[t["Bug"]]*= 2.0;
+        ResultArray[t["Dark"]]*= 2.0;
+        ResultArray[t["Fight"]]*= 0.5;
+        ResultArray[t["Ghost"]]*= 2.0;
+        ResultArray[t["Psychic"]]*= 0.5;
     }
 
     if (type == 'Rock') {
-        ResultArray[4]*= 2.0;
-        ResultArray[5]*= 0.5;
-        ResultArray[6]*= 0.5;
-        ResultArray[8]*= 2.0;
-        ResultArray[9]*= 2.0;
-        ResultArray[11]*= 0.5;
-        ResultArray[12]*= 0.5;
-        ResultArray[15]*= 2.0;
-        ResultArray[16]*= 2.0;
+        ResultArray[t["Fight"]]*= 2.0;
+        ResultArray[t["Fire"]]*= 0.5;
+        ResultArray[t["Flying"]]*= 0.5;
+        ResultArray[t["Grass"]]*= 2.0;
+        ResultArray[t["Ground"]]*= 2.0;
+        ResultArray[t["Normal"]]*= 0.5;
+        ResultArray[t["Poison"]]*= 0.5;
+        ResultArray[t["Steel"]]*= 2.0;
+        ResultArray[t["Water"]]*= 2.0;
     }
 
     if (type == 'Steel') {
-        ResultArray[0]*= 0.5;
-/*        ResultArray[1]*= 0.5;*/
-        ResultArray[2]*= 0.5;
-        ResultArray[4]*= 2.0;
-        ResultArray[5]*= 2.0;
-        ResultArray[6]*= 0.5;
-/*        ResultArray[7]*= 0.5;*/
-        ResultArray[8]*= 0.5;
-        ResultArray[9]*= 2.0;
-        ResultArray[10]*= 0.5;
-        ResultArray[11]*= 0.5;
-        ResultArray[12]*= 0.0;
-        ResultArray[13]*= 0.5;
-        ResultArray[14]*= 0.5;
-        ResultArray[15]*= 0.5;
-        ResultArray[17]*= 0.5;
+        ResultArray[t["Bug"]]*= 0.5;
+/*        ResultArray[t["Dark"]]*= 0.5;*/
+        ResultArray[t["Dragon"]]*= 0.5;
+        ResultArray[t["Fight"]]*= 2.0;
+        ResultArray[t["Fire"]]*= 2.0;
+        ResultArray[t["Flying"]]*= 0.5;
+/*        ResultArray[t["Ghost"]]*= 0.5;*/
+        ResultArray[t["Grass"]]*= 0.5;
+        ResultArray[t["Ground"]]*= 2.0;
+        ResultArray[t["Ice"]]*= 0.5;
+        ResultArray[t["Normal"]]*= 0.5;
+        ResultArray[t["Poison"]]*= 0.0;
+        ResultArray[t["Psychic"]]*= 0.5;
+        ResultArray[t["Rock"]]*= 0.5;
+        ResultArray[t["Steel"]]*= 0.5;
+        ResultArray[t["Fairy"]]*= 0.5;
     }
 
     if (type == 'Water') {
-        ResultArray[3]*= 2.0;
-        ResultArray[5]*= 0.5;
-        ResultArray[8]*= 2.0;
-        ResultArray[10]*= 0.5;
-        ResultArray[15]*= 0.5;
-        ResultArray[16]*= 0.5;
+        ResultArray[t["Electric"]]*= 2.0;
+        ResultArray[t["Fire"]]*= 0.5;
+        ResultArray[t["Grass"]]*= 2.0;
+        ResultArray[t["Ice"]]*= 0.5;
+        ResultArray[t["Steel"]]*= 0.5;
+        ResultArray[t["Water"]]*= 0.5;
     }
 
     if (type == 'Fairy') {
-        ResultArray[12]*= 2.0;
-        ResultArray[15]*= 2.0;
-        ResultArray[0]*= 0.5;
-        ResultArray[1]*= 0.5;
-        ResultArray[4]*= 0.5;
-        ResultArray[2]*= 0.0;
+        ResultArray[t["Poison"]]*= 2.0;
+        ResultArray[t["Steel"]]*= 2.0;
+        ResultArray[t["Bug"]]*= 0.5;
+        ResultArray[t["Dark"]]*= 0.5;
+        ResultArray[t["Fight"]]*= 0.5;
+        ResultArray[t["Dragon"]]*= 0.0;
     }
 
 }
