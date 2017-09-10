@@ -90,6 +90,7 @@ function clearSelection(className){
 }
 
 function addOneType1(){
+    if (this.className !== 'None' && this.className === type2) return;
     clearSelection("active1");
     type1=this.className;
     this.className += " active1";
@@ -101,6 +102,7 @@ function addOneType1(){
 }
 
 function addOneType2(){
+    if (this.className !== 'None' && this.className === type1) return;
     clearSelection("active2");
     type2=this.className;
     this.className += " active2";
